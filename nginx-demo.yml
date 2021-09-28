@@ -15,8 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: echoserverdemo
+          image: k8s.gcr.io/echoserver:1.4
           ports:
-          - containerPort: 80
-
+          - containerPort: 8080
