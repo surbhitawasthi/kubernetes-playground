@@ -2,10 +2,12 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: nginx-haproxy-ingress
+  annotations:
+    haproxy.org/path-rewrite: "/"
+    kubernetes.io/ingress.class: haproxy
 spec:
   rules:
-    - host: demo.com
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
