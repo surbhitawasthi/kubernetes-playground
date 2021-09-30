@@ -200,10 +200,12 @@ kind: Service
 metadata:
   name: haproxy-ingress
   namespace: haproxy-controller
+  annotations:
+    networking.gke.io/load-balancer-type: "Internal"
   labels:
     run: haproxy-ingress
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     run: haproxy-ingress
   ports:
