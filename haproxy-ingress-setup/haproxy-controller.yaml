@@ -151,6 +151,8 @@ spec:
           args:
             - --configmap=haproxy-controller/haproxy
             - --default-backend-service=haproxy-controller/ingress-default-backend
+            - --ingress.class=haproxy
+            - --publish-service=haproxy-controller/kubernetes-ingress
           securityContext:
             runAsUser:  1000
             runAsGroup: 1000
